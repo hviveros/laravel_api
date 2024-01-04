@@ -17,7 +17,10 @@ class NotaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'usuario_id'=> rand(1,10),
+            'titulo'    => fake()->sentence,
+            'slug'      => fake()->slug,
+            'contenido' => fake()->text(1600)
         ];
     }
 }
