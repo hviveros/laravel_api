@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Nota extends Model
 {
     use HasFactory;
+
+    public function getExcerptAttribute()
+    {
+        return substr($this->contenido, 0, 120);
+    }
+
+    public function getPublishedAtAttribute()
+    {
+        return $this->created_at->diffForHumans();
+        // return $this->created_at->format('d/m/Y');
+    }
 }
