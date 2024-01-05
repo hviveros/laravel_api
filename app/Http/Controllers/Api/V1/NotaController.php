@@ -15,7 +15,7 @@ class NotaController extends Controller
      */
     public function index()
     {
-        //
+        return NotaResource::collection(Nota::latest()->paginate());
     }
 
     /**
@@ -48,6 +48,10 @@ class NotaController extends Controller
      */
     public function destroy(Nota $nota)
     {
-        //
+        $nota->delete();
+
+        return response()->json([
+            'message' => 'success'
+        ], 204);
     }
 }
