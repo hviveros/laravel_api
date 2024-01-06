@@ -16,7 +16,7 @@ class NotaController extends Controller
      */
     public function index()
     {
-        //
+        return new NotaCollection(Nota::latest()->paginate());
     }
 
     /**

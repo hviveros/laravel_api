@@ -14,6 +14,16 @@ class NotaCollection extends ResourceCollection
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'data' => $this->collection,
+            'meta' => [
+              'organization' => 'Amazon',
+              'authors' => [
+                'Hlvr',
+                'Amazon'
+              ]
+            ],
+            'type' => 'articles'
+          ];
     }
 }
