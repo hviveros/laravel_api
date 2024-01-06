@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('notas', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('usuario_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('titulo');
             $table->string('slug')->unique();
             $table->text('contenido');
 
             $table->timestamps();
 
-            $table->foreign('usuario_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
